@@ -16,5 +16,6 @@ export const App = () => (
     dataProvider={dataProvider}
   >
     <Resource name="users" />
+    <Resource name="contacts" list={ListGuesser} />
   </Admin>
 );
