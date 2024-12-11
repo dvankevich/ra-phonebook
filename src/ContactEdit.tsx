@@ -16,7 +16,7 @@ const ContactEdit = () => (
         </Toolbar>
       }
     >
-      <TextInput source="id" disabled />
+      <TextInput source="id" disabled sx={{ display: "none" }} />
       <TextInput source="name" validate={required()} />
       <TextInput source="number" validate={required()} />
     </SimpleForm>
