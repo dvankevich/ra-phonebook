@@ -10,7 +10,7 @@ import {
 
 const ContactList = () => (
   <List pagination={false}>
-    <Datagrid>
+    <Datagrid rowClick={false}>
       {/* <TextField source="id" /> */}
       <TextField source="name" />
       <TextField source="number" />

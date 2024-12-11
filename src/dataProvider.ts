@@ -31,10 +31,14 @@ export const dataProvider: DataProvider = {
   },
 
   getOne: async (resource: string, params: { id: string }) => {
-    const { json } = await httpClient(`${apiUrl}/${resource}/${params.id}`, {
+    const { json } = await httpClient(`${apiUrl}/${resource}`, {
       headers: getAuthHeaders(),
     });
-    return { data: json };
+    const contact = json.find((item: { id: string }) => item.id === params.id);
+    if (!contact) {
+      throw new Error(`Contact with id ${params.id} not found`);
+    }
+    return { data: contact };
   },
 
   create: async (resource: string, params: CreateParams) => {
