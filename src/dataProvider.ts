@@ -21,14 +21,12 @@ const getAuthHeaders = () => {
 
 export const dataProvider: DataProvider = {
   getList: async (resource: string, params: GetListParams) => {
-    const { headers, json } = await httpClient(`${apiUrl}/${resource}`, {
+    const { json } = await httpClient(`${apiUrl}/${resource}`, {
       headers: getAuthHeaders(),
     });
     return {
       data: json,
-      total: headers.get("content-range")
-        ? parseInt(headers.get("content-range").split("/").pop() || "0", 10)
-        : json.length,
+      total: json.length, // Повертаємо загальну кількість елементів
     };
   },
 
