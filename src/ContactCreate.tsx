@@ -8,7 +8,7 @@ import {
 } from "react-admin";
 
 const ContactCreate = () => (
-  <Create>
+  <Create redirect="list">
     <SimpleForm
       toolbar={
         <Toolbar>

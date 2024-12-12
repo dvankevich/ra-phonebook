@@ -1,9 +1,9 @@
 import {
   Admin,
   Resource,
-  ListGuesser,
-  EditGuesser,
-  ShowGuesser,
+  // ListGuesser,
+  // EditGuesser,
+  // ShowGuesser,
 } from "react-admin";
 import { Layout } from "./Layout";
 import { dataProvider } from "./dataProvider";
