@@ -6,16 +6,17 @@ import {
   TextField,
   EditButton,
   DeleteButton,
+  //BulkDeleteButton,
 } from "react-admin";
 
 const ContactList = () => (
   <List pagination={false}>
-    <Datagrid rowClick={false}>
+    <Datagrid rowClick={false} bulkActionButtons={false}>
       {/* <TextField source="id" /> */}
       <TextField source="name" />
       <TextField source="number" />
       <EditButton />
-      <DeleteButton />
+      <DeleteButton mutationMode="pessimistic" />
     </Datagrid>
   </List>
 );
