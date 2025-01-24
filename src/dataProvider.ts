@@ -26,7 +26,7 @@ export const dataProvider: DataProvider = {
     });
     return {
       data: json,
-      total: json.length, // Повертаємо загальну кількість елементів
+      total: json.length,
     };
   },
 
